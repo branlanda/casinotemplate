@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Casino Crypto XYZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen">
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-b border-gray-700/50 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-yellow-500">🎲 Casino Crypto XYZ</a>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">Games</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">Promotions</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">Profile</a>
+                    <button class="text-gray-300 hover:text-yellow-500 transition-colors">Log Out</button>
+                </nav>
+
+                <!-- Balance -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:block text-right">
+                        <div class="text-sm text-gray-400">Total Balance</div>
+                        <div class="text-yellow-500 font-bold">0.00000000 BTC</div>
+                        <div class="text-sm text-gray-400">≈ $0.00 USDT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-24">
+        <div class="container mx-auto px-4">
+            <!-- Welcome Section -->
+            <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 mb-8 border border-gray-700/50">
+                <h1 class="text-2xl font-bold mb-2">Hello, User!</h1>
+                <p class="text-gray-400">Welcome back to Casino Crypto XYZ</p>
+            </div>
+
+            <!-- Balance Panel -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Main Balance Card -->
+                <div class="md:col-span-2 bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-2xl p-6 border border-gray-700/50">
+                    <h2 class="text-xl font-semibold mb-4">Current Balance</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-800/50 rounded-xl p-4">
+                            <div class="text-sm text-gray-400 mb-1">BTC Balance</div>
+                            <div class="text-2xl font-bold text-yellow-500">0.00000000</div>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-xl p-4">
+                            <div class="text-sm text-gray-400 mb-1">USDT Balance</div>
+                            <div class="text-2xl font-bold text-green-500">0.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Promotions -->
+                <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                    <h2 class="text-xl font-semibold mb-4">Active Promotions</h2>
+                    <div class="space-y-4">
+                        <div class="bg-gray-700/50 rounded-xl p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="font-medium">Welcome Bonus</div>
+                                <span class="text-yellow-500">100%</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Up to 1 BTC on your first deposit</p>
+                        </div>
+                        <div class="bg-gray-700/50 rounded-xl p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="font-medium">Daily Bonus</div>
+                                <span class="text-yellow-500">20%</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Daily reload up to 0.1 BTC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Games -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-4">Popular Games</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Roulette Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl bg-gray-800/80 backdrop-blur-lg border border-gray-700/50 transition-all duration-300 hover:scale-[1.02]">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
+                        <div class="relative p-6">
+                            <div class="text-4xl mb-4">🎲</div>
+                            <h3 class="text-xl font-semibold mb-2">Roulette</h3>
+                            <p class="text-gray-400">Classic European roulette with the best odds</p>
+                        </div>
+                    </a>
+
+                    <!-- Slots Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl bg-gray-800/80 backdrop-blur-lg border border-gray-700/50 transition-all duration-300 hover:scale-[1.02]">
+                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-900/20 to-red-900/20"></div>
+                        <div class="relative p-6">
+                            <div class="text-4xl mb-4">🎰</div>
+                            <h3 class="text-xl font-semibold mb-2">Slots</h3>
+                            <p class="text-gray-400">Slot machines with the best prizes</p>
+                        </div>
+                    </a>
+
+                    <!-- Dice Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl bg-gray-800/80 backdrop-blur-lg border border-gray-700/50 transition-all duration-300 hover:scale-[1.02]">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-900/20 to-blue-900/20"></div>
+                        <div class="relative p-6">
+                            <div class="text-4xl mb-4">🎯</div>
+                            <h3 class="text-xl font-semibold mb-2">Dice</h3>
+                            <p class="text-gray-400">Play dice with the best odds</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Recent Bets History -->
+            <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50 mb-8">
+                <h2 class="text-xl font-semibold mb-4">Recent Betting History</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="text-left text-gray-400 text-sm">
+                                <th class="pb-4">Game</th>
+                                <th class="pb-4">Date</th>
+                                <th class="pb-4">Amount</th>
+                                <th class="pb-4">Result</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-t border-gray-700">
+                                <td class="py-4">Roulette</td>
+                                <td>2024-02-20 15:30</td>
+                                <td>0.001 BTC</td>
+                                <td class="text-green-500">Won</td>
+                            </tr>
+                            <tr class="border-t border-gray-700">
+                                <td class="py-4">Slots</td>
+                                <td>2024-02-20 14:15</td>
+                                <td>0.002 BTC</td>
+                                <td class="text-green-500">Won</td>
+                            </tr>
+                            <tr class="border-t border-gray-700">
+                                <td class="py-4">Dice</td>
+                                <td>2024-02-20 13:45</td>
+                                <td>0.0005 BTC</td>
+                                <td class="text-red-500">Lost</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Fixed Deposit Button -->
+    <div class="fixed bottom-8 right-8">
+        <button class="px-6 py-3 bg-yellow-500 text-gray-900 rounded-full font-semibold hover:bg-yellow-400 transform hover:scale-105 transition-all duration-200 shadow-lg flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+            <span>Deposit</span>
+        </button>
+    </div>
+</body>
+</html> 

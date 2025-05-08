@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Rankings - Casino Crypto XYZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Translate Scripts -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,es,fr,de,pt,it',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Custom Language Selector Styles */
+        .language-selector {
+            position: relative;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            min-width: 200px;
+            background: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        .language-dropdown.show {
+            display: block;
+        }
+        .language-option {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .language-option:hover {
+            background: rgba(234, 179, 8, 0.2);
+        }
+        .language-flag {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            object-fit: cover;
+        }
+        .language-code {
+            color: #9CA3AF;
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+        /* Hide Google Translate Element */
+        #google_translate_element {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-b border-gray-700/50 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-yellow-500">🎲 Casino Crypto XYZ</a>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Home</a>
+                    <a href="games.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Games</a>
+                    <a href="tournaments.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Tournaments</a>
+                    <a href="ranking.html" class="text-yellow-500">Rankings</a>
+                    <!-- Custom Language Selector -->
+                    <div class="language-selector">
+                        <button id="languageButton" class="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <span class="text-xl">🌐</span>
+                            <span id="currentLanguage">EN</span>
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown">
+                            <div class="language-option" data-lang="en">
+                                <img src="https://flagcdn.com/w40/us.png" alt="English" class="language-flag">
+                                <span>English</span>
+                                <span class="language-code">EN</span>
+                            </div>
+                            <div class="language-option" data-lang="es">
+                                <img src="https://flagcdn.com/w40/es.png" alt="Español" class="language-flag">
+                                <span>Español</span>
+                                <span class="language-code">ES</span>
+                            </div>
+                            <div class="language-option" data-lang="fr">
+                                <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="language-flag">
+                                <span>Français</span>
+                                <span class="language-code">FR</span>
+                            </div>
+                            <div class="language-option" data-lang="de">
+                                <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" class="language-flag">
+                                <span>Deutsch</span>
+                                <span class="language-code">DE</span>
+                            </div>
+                            <div class="language-option" data-lang="pt">
+                                <img src="https://flagcdn.com/w40/pt.png" alt="Português" class="language-flag">
+                                <span>Português</span>
+                                <span class="language-code">PT</span>
+                            </div>
+                            <div class="language-option" data-lang="it">
+                                <img src="https://flagcdn.com/w40/it.png" alt="Italiano" class="language-flag">
+                                <span>Italiano</span>
+                                <span class="language-code">IT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="login.html" class="px-6 py-2 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                        Sign In
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-300 hover:text-yellow-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-12 px-4">
+        <div class="container mx-auto">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    Top Players in <span class="text-yellow-500">Active Tournaments</span>
+                </h1>
+                <p class="text-gray-400 text-lg mb-8">
+                    Show your skills and compete for the best prizes. The ranking updates in real-time 
+                    based on betting volume and number of wins in each tournament.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto">
+            <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Tournament Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Active Tournament</label>
+                        <select class="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                            <option value="all">All Tournaments</option>
+                            <option value="roulette">VIP Weekend Roulette</option>
+                            <option value="slots">Slots Master Challenge</option>
+                            <option value="dice">Dice Pro League</option>
+                        </select>
+                    </div>
+
+                    <!-- Game Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Game</label>
+                        <select class="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                            <option value="all">All Games</option>
+                            <option value="roulette">Roulette</option>
+                            <option value="slots">Slots</option>
+                            <option value="dice">Dice</option>
+                        </select>
+                    </div>
+
+                    <!-- Time Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Period</label>
+                        <select class="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="all">All Time</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranking Table Section -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto">
+            <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl border border-gray-700/50 overflow-hidden">
+                <!-- Table Header -->
+                <div class="grid grid-cols-5 gap-4 p-6 border-b border-gray-700/50 text-gray-400 text-sm font-medium">
+                    <div>Position</div>
+                    <div>Player</div>
+                    <div>Game</div>
+                    <div>Points</div>
+                    <div>Prizes</div>
+                </div>
+
+                <!-- Table Body -->
+                <div class="divide-y divide-gray-700/50">
+                    <!-- Top 1 -->
+                    <div class="grid grid-cols-5 gap-4 p-6 items-center hover:bg-gray-700/30 transition-colors bg-yellow-500/5">
+                        <div class="flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-500 font-bold">1</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">
+                                <span class="text-lg">👑</span>
+                            </div>
+                            <span class="font-medium">CryptoKing</span>
+                        </div>
+                        <div>Roulette</div>
+                        <div class="text-yellow-500 font-semibold">15,750</div>
+                        <div>2.5 BTC</div>
+                    </div>
+
+                    <!-- Top 2 -->
+                    <div class="grid grid-cols-5 gap-4 p-6 items-center hover:bg-gray-700/30 transition-colors bg-gray-700/10">
+                        <div class="flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-gray-400/20 flex items-center justify-center text-gray-400 font-bold">2</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">
+                                <span class="text-lg">🎯</span>
+                            </div>
+                            <span class="font-medium">LuckyShot</span>
+                        </div>
+                        <div>Slots</div>
+                        <div class="text-gray-400 font-semibold">12,450</div>
+                        <div>1.8 BTC</div>
+                    </div>
+
+                    <!-- Top 3 -->
+                    <div class="grid grid-cols-5 gap-4 p-6 items-center hover:bg-gray-700/30 transition-colors bg-yellow-900/10">
+                        <div class="flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-yellow-700/20 flex items-center justify-center text-yellow-700 font-bold">3</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">
+                                <span class="text-lg">🎲</span>
+                            </div>
+                            <span class="font-medium">DiceMaster</span>
+                        </div>
+                        <div>Dice</div>
+                        <div class="text-yellow-700 font-semibold">10,200</div>
+                        <div>1.2 BTC</div>
+                    </div>
+
+                    <!-- Other Players -->
+                    <div class="grid grid-cols-5 gap-4 p-6 items-center hover:bg-gray-700/30 transition-colors">
+                        <div class="flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-gray-700/50 flex items-center justify-center text-gray-400 font-bold">4</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">
+                                <span class="text-lg">🎮</span>
+                            </div>
+                            <span class="font-medium">GamePro</span>
+                        </div>
+                        <div>Roulette</div>
+                        <div class="text-gray-400">9,850</div>
+                        <div>0.8 BTC</div>
+                    </div>
+
+                    <!-- More players... -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-between items-center p-6 border-t border-gray-700/50">
+                    <div class="text-sm text-gray-400">
+                        Showing 1-4 of 50 players
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50" disabled>
+                            Previous
+                        </button>
+                        <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Join Button -->
+    <div class="fixed bottom-8 right-8">
+        <a href="login.html" class="inline-flex items-center px-6 py-3 bg-yellow-500 text-gray-900 rounded-xl font-semibold hover:bg-yellow-400 transform hover:scale-[1.02] transition-all duration-200 shadow-lg">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+            Join Tournament
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800/95 backdrop-blur-lg border-t border-gray-700/50 py-12 mt-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-500 mb-4">Casino Crypto XYZ</h3>
+                    <p class="text-gray-400">The best cryptocurrency casino with the most exciting tournaments.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Tournaments</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Rankings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to receive updates on new tournaments and promotions.</p>
+                    <form class="flex space-x-2">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                        <button type="submit" class="px-4 py-2 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700/50 text-center text-gray-400">
+                <p>&copy; 2024 Casino Crypto XYZ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Selector Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageButton = document.getElementById('languageButton');
+            const languageDropdown = document.getElementById('languageDropdown');
+            const currentLanguage = document.getElementById('currentLanguage');
+            const languageOptions = document.querySelectorAll('.language-option');
+
+            // Toggle dropdown
+            languageButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                languageDropdown.classList.toggle('show');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!languageButton.contains(e.target) && !languageDropdown.contains(e.target)) {
+                    languageDropdown.classList.remove('show');
+                }
+            });
+
+            // Handle language selection
+            languageOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.dataset.lang;
+                    const langText = this.querySelector('span').textContent;
+                    const langCode = this.querySelector('.language-code').textContent;
+                    
+                    // Update current language display
+                    currentLanguage.textContent = langCode;
+                    
+                    // Trigger Google Translate
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = lang;
+                        select.dispatchEvent(new Event('change'));
+                    }
+
+                    // Close dropdown
+                    languageDropdown.classList.remove('show');
+                });
+            });
+
+            // Set initial language
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            const initialOption = document.querySelector(`[data-lang="${savedLang}"]`);
+            if (initialOption) {
+                const langCode = initialOption.querySelector('.language-code').textContent;
+                currentLanguage.textContent = langCode;
+            }
+        });
+    </script>
+</body>
+</html> 

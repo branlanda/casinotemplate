@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Casino Crypto XYZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen">
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-b border-gray-700/50 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-yellow-500">🎲 Casino Crypto XYZ</a>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Dashboard</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">Promotions</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">Profile</a>
+                </nav>
+
+                <!-- Balance -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:block text-right">
+                        <div class="text-sm text-gray-400">Total Balance</div>
+                        <div class="text-yellow-500 font-bold">0.00000000 BTC</div>
+                        <div class="text-sm text-gray-400">≈ $0.00 USDT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-24">
+        <div class="container mx-auto px-4">
+            <!-- Page Title -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold mb-2">My Profile</h1>
+                <p class="text-gray-400">Manage your account and review your history</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Column: User Info -->
+                <div class="space-y-8">
+                    <!-- Basic Info -->
+                    <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                        <h2 class="text-xl font-semibold mb-6">Personal Information</h2>
+                        
+                        <div class="space-y-4">
+                            <!-- Username -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Username</label>
+                                <input type="text" value="User123"
+                                    class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                                <input type="email" value="user@email.com"
+                                    class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                            </div>
+
+                            <!-- Wallet -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Connected Wallet</label>
+                                <div class="flex items-center space-x-2">
+                                    <input type="text" value="0x1234...5678" readonly
+                                        class="flex-1 px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                                    <button class="px-4 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                                        Disconnect
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Save Button -->
+                            <button class="w-full px-6 py-4 bg-yellow-500 text-gray-900 rounded-xl font-semibold hover:bg-yellow-400 transform hover:scale-[1.02] transition-all duration-200">
+                                Save Changes
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Security -->
+                    <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                        <h2 class="text-xl font-semibold mb-6">Security</h2>
+                        
+                        <div class="space-y-4">
+                            <!-- Current Password -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Current Password</label>
+                                <input type="password"
+                                    class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                            </div>
+
+                            <!-- New Password -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">New Password</label>
+                                <input type="password"
+                                    class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Confirm New Password</label>
+                                <input type="password"
+                                    class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                            </div>
+
+                            <!-- 2FA Button -->
+                            <button class="w-full px-6 py-4 bg-gray-700 text-white rounded-xl font-semibold hover:bg-gray-600 transition-all duration-200">
+                                Enable Two-Factor Authentication (Coming Soon)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: History -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Betting History -->
+                    <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-semibold">Betting History</h2>
+                            <div class="flex space-x-2">
+                                <input type="date" class="px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                                <select class="px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200">
+                                    <option value="">All games</option>
+                                    <option value="roulette">Roulette</option>
+                                    <option value="slots">Slots</option>
+                                    <option value="dice">Dice</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr class="text-left text-gray-400 text-sm">
+                                        <th class="pb-4">Game</th>
+                                        <th class="pb-4">Date</th>
+                                        <th class="pb-4">Amount</th>
+                                        <th class="pb-4">Result</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-t border-gray-700">
+                                        <td class="py-4">Roulette</td>
+                                        <td>2024-02-20 15:30</td>
+                                        <td>0.001 BTC</td>
+                                        <td class="text-green-500">+0.035 BTC</td>
+                                    </tr>
+                                    <tr class="border-t border-gray-700">
+                                        <td class="py-4">Slots</td>
+                                        <td>2024-02-20 14:15</td>
+                                        <td>0.002 BTC</td>
+                                        <td class="text-red-500">-0.002 BTC</td>
+                                    </tr>
+                                    <tr class="border-t border-gray-700">
+                                        <td class="py-4">Dice</td>
+                                        <td>2024-02-20 13:45</td>
+                                        <td>0.0005 BTC</td>
+                                        <td class="text-green-500">+0.003 BTC</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Transaction History -->
+                    <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                        <h2 class="text-xl font-semibold mb-6">Transaction History</h2>
+
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr class="text-left text-gray-400 text-sm">
+                                        <th class="pb-4">Type</th>
+                                        <th class="pb-4">Date</th>
+                                        <th class="pb-4">Amount</th>
+                                        <th class="pb-4">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-t border-gray-700">
+                                        <td class="py-4">Deposit</td>
+                                        <td>2024-02-20 15:30</td>
+                                        <td>0.1 BTC</td>
+                                        <td class="text-green-500">Confirmed</td>
+                                    </tr>
+                                    <tr class="border-t border-gray-700">
+                                        <td class="py-4">Withdrawal</td>
+                                        <td>2024-02-20 14:15</td>
+                                        <td>0.05 BTC</td>
+                                        <td class="text-yellow-500">Pending</td>
+                                    </tr>
+                                    <tr class="border-t border-gray-700">
+                                        <td class="py-4">Deposit</td>
+                                        <td>2024-02-20 13:45</td>
+                                        <td>0.02 BTC</td>
+                                        <td class="text-green-500">Confirmed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Fixed Deposit Button -->
+    <div class="fixed bottom-8 right-8">
+        <button class="px-6 py-3 bg-yellow-500 text-gray-900 rounded-full font-semibold hover:bg-yellow-400 transform hover:scale-105 transition-all duration-200 shadow-lg flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+            <span>Deposit</span>
+        </button>
+    </div>
+</body>
+</html> 

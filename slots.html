@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slots - Casino Crypto XYZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Translate Scripts -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,es,fr,de,pt,it',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Custom Language Selector Styles */
+        .language-selector {
+            position: relative;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            min-width: 200px;
+            background: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        .language-dropdown.show {
+            display: block;
+        }
+        .language-option {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .language-option:hover {
+            background: rgba(234, 179, 8, 0.2);
+        }
+        .language-flag {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            object-fit: cover;
+        }
+        .language-code {
+            color: #9CA3AF;
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+        /* Hide Google Translate Element */
+        #google_translate_element {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen">
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-b border-gray-700/50 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-yellow-500">🎰 🎲 Casino Crypto XYZ 🎮</a>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Home</a>
+                    <a href="games.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Games</a>
+                    <a href="tournaments.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Tournaments</a>
+                    <a href="ranking.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Rankings</a>
+                    <a href="achievements.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Achievements</a>
+                    <!-- Custom Language Selector -->
+                    <div class="language-selector">
+                        <button id="languageButton" class="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <span class="text-xl">🌐</span>
+                            <span id="currentLanguage">EN</span>
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown">
+                            <div class="language-option" data-lang="en">
+                                <img src="https://flagcdn.com/w40/us.png" alt="English" class="language-flag">
+                                <span>English</span>
+                                <span class="language-code">EN</span>
+                            </div>
+                            <div class="language-option" data-lang="es">
+                                <img src="https://flagcdn.com/w40/es.png" alt="Español" class="language-flag">
+                                <span>Español</span>
+                                <span class="language-code">ES</span>
+                            </div>
+                            <div class="language-option" data-lang="fr">
+                                <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="language-flag">
+                                <span>Français</span>
+                                <span class="language-code">FR</span>
+                            </div>
+                            <div class="language-option" data-lang="de">
+                                <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" class="language-flag">
+                                <span>Deutsch</span>
+                                <span class="language-code">DE</span>
+                            </div>
+                            <div class="language-option" data-lang="pt">
+                                <img src="https://flagcdn.com/w40/pt.png" alt="Português" class="language-flag">
+                                <span>Português</span>
+                                <span class="language-code">PT</span>
+                            </div>
+                            <div class="language-option" data-lang="it">
+                                <img src="https://flagcdn.com/w40/it.png" alt="Italiano" class="language-flag">
+                                <span>Italiano</span>
+                                <span class="language-code">IT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hidden Google Translate Element -->
+                    <div id="google_translate_element"></div>
+                    <a href="login.html" class="px-6 py-2 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                        Sign In
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-300 hover:text-yellow-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-24">
+        <div class="container mx-auto px-4">
+            <!-- Game Title -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold mb-2">Crypto Slots 🎰</h1>
+                <p class="text-gray-400">Spin and win with the best slot machines 💰</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Column: Game Display -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Slots Machine -->
+                    <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/50">
+                        <!-- Reels Display -->
+                        <div class="relative w-full max-w-2xl mx-auto mb-8">
+                            <div class="grid grid-cols-5 gap-4">
+                                <!-- Reel 1 -->
+                                <div class="aspect-square bg-gray-900/50 rounded-xl border-2 border-gray-700/50 flex items-center justify-center text-4xl">
+                                    🎰 💫
+                                </div>
+                                <!-- Reel 2 -->
+                                <div class="aspect-square bg-gray-900/50 rounded-xl border-2 border-gray-700/50 flex items-center justify-center text-4xl">
+                                    💎 ✨
+                                </div>
+                                <!-- Reel 3 -->
+                                <div class="aspect-square bg-gray-900/50 rounded-xl border-2 border-gray-700/50 flex items-center justify-center text-4xl">
+                                    🎲 🎯
+                                </div>
+                                <!-- Reel 4 -->
+                                <div class="aspect-square bg-gray-900/50 rounded-xl border-2 border-gray-700/50 flex items-center justify-center text-4xl">
+                                    🍀 🌟
+                                </div>
+                                <!-- Reel 5 -->
+                                <div class="aspect-square bg-gray-900/50 rounded-xl border-2 border-gray-700/50 flex items-center justify-center text-4xl">
+                                    ⭐ 🎮
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Spin Button -->
+                        <div class="text-center">
+                            <button class="px-12 py-4 bg-yellow-500 text-gray-900 rounded-full font-semibold hover:bg-yellow-400 transform hover:scale-105 transition-all duration-200 shadow-lg text-xl">
+                                SPIN 🎰
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Betting Panel -->
+                    <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                        <h2 class="text-xl font-semibold mb-6">Betting Control 🎯</h2>
+                        
+                        <!-- Bet Amount -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Bet Amount (BTC)</label>
+                            <div class="flex space-x-2">
+                                <input type="number" step="0.00000001" min="0.00000001"
+                                    class="flex-1 px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                                    placeholder="0.00000000">
+                                <button class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                                    MAX
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Bet Lines -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Bet Lines</label>
+                            <div class="grid grid-cols-5 gap-2">
+                                <button class="p-2 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">1</button>
+                                <button class="p-2 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">5</button>
+                                <button class="p-2 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">10</button>
+                                <button class="p-2 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">20</button>
+                                <button class="p-2 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">50</button>
+                            </div>
+                        </div>
+
+                        <!-- Place Bet Button -->
+                        <button class="w-full px-6 py-4 bg-yellow-500 text-gray-900 rounded-xl font-semibold hover:bg-yellow-400 transform hover:scale-[1.02] transition-all duration-200">
+                            Place Bet 🎰
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Game Info -->
+                <div class="space-y-8">
+                    <!-- Current Win -->
+                    <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                        <h2 class="text-xl font-semibold mb-4">Current Win 💰</h2>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-400">Bet</span>
+                                <span class="font-medium">0.001 BTC</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-400">Combination</span>
+                                <span class="font-medium">🎰 🎰 🎰 🎰 🎰</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-400">Win</span>
+                                <span class="text-green-500 font-medium">0.035 BTC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Results -->
+                    <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                        <h2 class="text-xl font-semibold mb-4">Recent Results</h2>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center p-2 bg-gray-700/30 rounded-lg">
+                                <div class="flex items-center space-x-2">
+                                    <span>🎰 🎰 🎰 🎰 🎰</span>
+                                </div>
+                                <span class="text-green-500">+0.035 BTC</span>
+                            </div>
+                            <div class="flex justify-between items-center p-2 bg-gray-700/30 rounded-lg">
+                                <div class="flex items-center space-x-2">
+                                    <span>💎 💎 💎 💎 ⭐</span>
+                                </div>
+                                <span class="text-red-500">-0.001 BTC</span>
+                            </div>
+                            <div class="flex justify-between items-center p-2 bg-gray-700/30 rounded-lg">
+                                <div class="flex items-center space-x-2">
+                                    <span>🍀 🍀 🍀 🎲 🎲</span>
+                                </div>
+                                <span class="text-green-500">+0.015 BTC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paytable -->
+                    <div class="bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
+                        <h2 class="text-xl font-semibold mb-4">Paytable</h2>
+                        <div class="space-y-3 text-sm text-gray-400">
+                            <p>• 5x 🎰 = 35x</p>
+                            <p>• 5x 💎 = 25x</p>
+                            <p>• 5x 🎲 = 20x</p>
+                            <p>• 5x 🍀 = 15x</p>
+                            <p>• 5x ⭐ = 10x</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Fixed Deposit Button -->
+    <div class="fixed bottom-8 right-8">
+        <button class="px-6 py-3 bg-yellow-500 text-gray-900 rounded-full font-semibold hover:bg-yellow-400 transform hover:scale-105 transition-all duration-200 shadow-lg flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+            <span>Deposit</span>
+        </button>
+    </div>
+
+    <script>
+        // Language Selector Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageButton = document.getElementById('languageButton');
+            const languageDropdown = document.getElementById('languageDropdown');
+            const currentLanguage = document.getElementById('currentLanguage');
+            const languageOptions = document.querySelectorAll('.language-option');
+
+            // Toggle dropdown
+            languageButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                languageDropdown.classList.toggle('show');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!languageButton.contains(e.target) && !languageDropdown.contains(e.target)) {
+                    languageDropdown.classList.remove('show');
+                }
+            });
+
+            // Handle language selection
+            languageOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.dataset.lang;
+                    const langText = this.querySelector('span').textContent;
+                    const langCode = this.querySelector('.language-code').textContent;
+                    
+                    // Update current language display
+                    currentLanguage.textContent = langCode;
+                    
+                    // Trigger Google Translate
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = lang;
+                        select.dispatchEvent(new Event('change'));
+                    }
+
+                    // Close dropdown
+                    languageDropdown.classList.remove('show');
+                });
+            });
+
+            // Set initial language
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            const initialOption = document.querySelector(`[data-lang="${savedLang}"]`);
+            if (initialOption) {
+                const langCode = initialOption.querySelector('.language-code').textContent;
+                currentLanguage.textContent = langCode;
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Casino Crypto XYZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glassmorphism {
+            background: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(75, 85, 99, 0.5);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen">
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-b border-gray-700/50 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-yellow-500">🎲 Casino Crypto XYZ</a>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard.html" class="text-gray-300 hover:text-yellow-500 transition-colors">Dashboard</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">Promotions</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-500 transition-colors">Profile</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-300 hover:text-yellow-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative min-h-[40vh] pt-24">
+        <!-- Background with overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-blue-900/50 z-0"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center z-[-1]"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 py-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    Terms & Conditions ⚖️
+                </h1>
+                <p class="text-xl text-gray-300">
+                    Read our terms to play safely.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Content Section -->
+    <section class="py-16 bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Tabs Navigation -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <button class="tab-button px-6 py-3 bg-gray-700/50 rounded-lg font-semibold hover:bg-gray-600/50 transition-colors active" data-tab="terms">
+                        Terms of Use
+                    </button>
+                    <button class="tab-button px-6 py-3 bg-gray-700/50 rounded-lg font-semibold hover:bg-gray-600/50 transition-colors" data-tab="privacy">
+                        Privacy Policy
+                    </button>
+                    <button class="tab-button px-6 py-3 bg-gray-700/50 rounded-lg font-semibold hover:bg-gray-600/50 transition-colors" data-tab="betting">
+                        Betting Rules
+                    </button>
+                    <button class="tab-button px-6 py-3 bg-gray-700/50 rounded-lg font-semibold hover:bg-gray-600/50 transition-colors" data-tab="withdrawals">
+                        Withdrawal Policy
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="glassmorphism rounded-lg p-8">
+                    <!-- Terms of Use -->
+                    <div id="terms" class="tab-content active">
+                        <h2 class="text-2xl font-bold mb-6">Website Terms of Use</h2>
+                        <div class="prose prose-invert max-w-none">
+                            <p class="mb-4">By accessing and using Casino Crypto XYZ, you agree to be bound by the following terms and conditions:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>You must be 18 years or older to use our services.</li>
+                                <li>You are responsible for maintaining the confidentiality of your account.</li>
+                                <li>You must not use our site for illegal activities.</li>
+                                <li>We reserve the right to modify these terms at any time.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Policy -->
+                    <div id="privacy" class="tab-content">
+                        <h2 class="text-2xl font-bold mb-6">Privacy Policy</h2>
+                        <div class="prose prose-invert max-w-none">
+                            <p class="mb-4">Your privacy is important to us. This policy describes how we collect and use your information:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>We collect personal information to verify your identity and prevent fraud.</li>
+                                <li>We use cookies to improve your user experience.</li>
+                                <li>We do not share your information with third parties without your consent.</li>
+                                <li>You can request a copy of your personal data at any time.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Betting Rules -->
+                    <div id="betting" class="tab-content">
+                        <h2 class="text-2xl font-bold mb-6">Betting Rules</h2>
+                        <div class="prose prose-invert max-w-none">
+                            <p class="mb-4">To ensure fair and secure gaming, all users must follow these rules:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Bets must be placed before the start of each round.</li>
+                                <li>Multiple bets from the same IP are not allowed.</li>
+                                <li>Results are determined by our verifiable system.</li>
+                                <li>We reserve the right to void bets in case of technical error.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Withdrawal Policy -->
+                    <div id="withdrawals" class="tab-content">
+                        <h2 class="text-2xl font-bold mb-6">Withdrawal Policy</h2>
+                        <div class="prose prose-invert max-w-none">
+                            <p class="mb-4">Our withdrawal policy is designed to ensure secure transactions:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Withdrawals are processed within 24 business hours.</li>
+                                <li>You must complete KYC verification before withdrawing.</li>
+                                <li>Minimum withdrawal amounts vary by cryptocurrency.</li>
+                                <li>Network fees are the responsibility of the user.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal Contact -->
+                <div class="mt-8 text-center">
+                    <p class="text-gray-400">Have legal questions? Contact us at:</p>
+                    <a href="mailto:legal@casinocryptoxyz.com" class="text-yellow-500 hover:text-yellow-400 transition-colors">
+                        legal@casinocryptoxyz.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html> 
